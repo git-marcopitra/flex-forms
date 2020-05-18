@@ -1,0 +1,20 @@
+table {
+    margin: 2rem;
+    background-color: bisque;
+    border: 1px;
+}
+
+input {
+    padding: .5rem 1rem;
+    border: 1px solid black;
+    background-color: inherit;
+}
+
+th{
+    padding: .5rem 2rem;
+}
+
+.dados {
+    border: none;
+}
+

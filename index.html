@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Responsável por decidir qual form será utilizado -->
@@ -26,8 +27,9 @@
         <tbody id="corpo"></tbody>
     </table>
 
-
-    
+    <fieldset id="container">
+        <legend>Pre-visualização</legend>
+    </fieldset>
 
 
     <script>
@@ -75,26 +77,46 @@
         // Pegar o corpo da tabela
         var tbody = document.getElementById('corpo');
 
+        // Pegar o corpo do formulário
+        var form = document.getElementById('container');
+        
         // A tarefa a ser executada
         function tarefa(){
             var td;     
-            
             tbody.innerHTML = "";
-
+            
+            ///Criar formulário
+            form.innerHTML = `
+                <legend>Pre-visualização</legend>
+                <form name="${forms.value}">
+            ` ;
+            
             // Percorrer o vetor fields
             fields.forEach(row => {
 
                 // Pegarcorrer o objecto
                 if (row.form == forms.value){ 
                     td = `
-                        <td>${row.form}</td>
-                        <td>${row.field}</td>
-                        <td>${row.type}</td>
-                        <td>${row.placeholder}</td>
+                        <td> <input class="dados" value="${row.form}"> </td>
+                        <td> <input class="dados" value="${row.field}"> </td>
+                        <td> <input class="dados" value="${row.type}"> </td>
+                        <td> <input class="dados" value="${row.placeholder}"> </td>
                     `;
                     tbody.innerHTML += `<tr> ${td} </tr>`;
+
+
+                    // Adicionar campos ao Formulário
+                    form.innerHTML += `
+                        <br /><label> ${row.placeholder} <br />
+                        <input type="${row.type}" name="${row.field}" placeholder="${row.placeholder}">
+                        </label>
+                    `;
                 }
-            })
+
+            });
+            // Terminar Formulário
+            form.innerHTML += "</form>"
+
         }
 
     </script>
