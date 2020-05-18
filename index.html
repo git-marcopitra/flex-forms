@@ -13,6 +13,20 @@
         <option value="signup"> Formulário de registro </option>
     </select>
 
+    <!-- Tabelas a ser aprensentadas -->
+    <table>
+        <thead>
+            <tr>
+                <th> Formulário </th>
+                <th> Campo </th>
+                <th> Tipo </th>
+                <th> Placeholder </th>
+            </tr>
+        </thead>
+        <tbody id="corpo"></tbody>
+    </table>
+
+
     
 
 
@@ -23,9 +37,64 @@
         // Controlar o campo sempre que houver alteração executar a tarefa
         forms.addEventListener('change', tarefa);
 
+        // A para os campos do form
+        var fields = [
+            {
+                form: 'signin',
+                field: 'Username',
+                type: 'text',
+                placeholder: 'Nome de utilizado'
+            },
+            {
+                form: 'signin',
+                field: 'Password',
+                type: 'password',
+                placeholder: 'Palavra-passe'
+            },
+            {
+                form: 'signup',
+                field: 'fullname',
+                type: 'text',
+                placeholder: 'Nome Completo'
+            },
+            {
+                form: 'signup',
+                field: 'Username',
+                type: 'text',
+                placeholder: 'Nome de utilizado'
+            },
+            {
+                form: 'signup',
+                field: 'Password',
+                type: 'password',
+                placeholder: 'Palavra-passe'
+            }
+        ];
+
+
+        // Pegar o corpo da tabela
+        var tbody = document.getElementById('corpo');
+
         // A tarefa a ser executada
         function tarefa(){
-            alert("Eu sou tarefa a ser executada");
+            var td;     
+            
+            tbody.innerHTML = "";
+
+            // Percorrer o vetor fields
+            fields.forEach(row => {
+
+                // Pegarcorrer o objecto
+                if (row.form == forms.value){ 
+                    td = `
+                        <td>${row.form}</td>
+                        <td>${row.field}</td>
+                        <td>${row.type}</td>
+                        <td>${row.placeholder}</td>
+                    `;
+                    tbody.innerHTML += `<tr> ${td} </tr>`;
+                }
+            })
         }
 
     </script>
