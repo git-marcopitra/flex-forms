@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <select>
+    <!-- Responsável por decidir qual form será utilizado -->
+    <select id="forms">
         <option value="" selected disabled>Selecione o teu formulário</option>
         <option value="signin"> Formulário de Login </option>
         <option value="signup"> Formulário de registro </option>
@@ -15,6 +16,18 @@
     
 
 
+    <script>
+        // Pegar o campo select Forms
+        var forms = document.getElementById('forms');
+        
+        // Controlar o campo sempre que houver alteração executar a tarefa
+        forms.addEventListener('change', tarefa);
 
+        // A tarefa a ser executada
+        function tarefa(){
+            alert("Eu sou tarefa a ser executada");
+        }
+
+    </script>
 </body>
 </html>
