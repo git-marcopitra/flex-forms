@@ -61,7 +61,7 @@ h1, h2,h3, h4, h5, h6 {
 }
 
 thead {
-    background-color: darkgray;
+    background-color: var(--color-2);
     color: white;
 }
 
@@ -70,7 +70,7 @@ tr {
 }
 
 fieldset {
-    background-color: var(--color-2);
+    background-color: white;
 }
 
 .border-b {
