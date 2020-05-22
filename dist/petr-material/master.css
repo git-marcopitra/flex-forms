@@ -49,7 +49,8 @@ p {
 }
 
 input, select, option {
-    padding: .5rem 1rem;
+    background-color: inherit;
+    padding: .5rem;
     outline: none;
     border: none;
     margin: 10px;
@@ -70,11 +71,19 @@ button:hover {
 }
 
 table {
+    width: calc(100% - 2rem);
     margin: 1rem;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: .5rem 1rem;
 }
 
 fieldset {
+    display: inline-flex;
     padding: 2rem;
+    margin: 1rem;
     border: none;
 }
 

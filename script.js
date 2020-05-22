@@ -2,7 +2,7 @@ console.log("Script Works");
 
 var forms = document.getElementById('forms');
 var form = document.getElementById('container');
-var tbody = document.querySelector('table[petr-table-form]');
+var tbody = document.querySelector('*[petr-table-form]');
 
 forms.addEventListener('change', renderView);
 
@@ -20,16 +20,16 @@ function renderView(){
         if (row.form == forms.value){ 
             tr = `
                 <td> ${row.form} </td>
-                <td> <input petr-form-field id="name-${row.id}" class="iTable" id="" value="${row.name}"> </td>
+                <td> <input petr-form-field id="name-${row.id}" class="border-b iTable" id="" value="${row.name}"> </td>
                 <td> 
-                    <select petr-form-field id="type-${row.id}" class="iTable">
+                    <select petr-form-field id="type-${row.id}" class="border iTable">
                         <option disabled value=""> Selecione o tipo </option>
                         ${types.forEach(f => typies += `<option ${f === row.type ? 'selected':''} value="${f}">${f}</option>`)}
                         ${typies}
                     </select>
                 </td>
-                <td> <input petr-form-field id="placeholder-${row.id}" class="iTable" value="${row.placeholder}"> </td>
-                <td> <input petr-form-field id="label-${row.id}" class="iTable" value="${row.label}"> </td>
+                <td> <input petr-form-field id="placeholder-${row.id}" class="border-b iTable" value="${row.placeholder}"> </td>
+                <td> <input petr-form-field id="label-${row.id}" class="border-b iTable" value="${row.label}"> </td>
                 <td> <button onclick="renderView()"> Refresh </button> </td>
             `;
 
@@ -37,7 +37,7 @@ function renderView(){
 
             form.innerHTML += `
                 <br /><label> ${row.label} <br />
-                <input type="${row.type}" name="${row.name}" placeholder="${row.placeholder}">
+                <input class="border-b" type="${row.type}" name="${row.name}" placeholder="${row.placeholder}">
                 </label>
             `;
         }
