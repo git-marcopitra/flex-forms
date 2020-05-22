@@ -70,7 +70,7 @@ tr {
 }
 
 fieldset {
-    background-color: white;
+    background-color: var(--color-2);
 }
 
 .border-b {
