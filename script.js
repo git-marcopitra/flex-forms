@@ -96,5 +96,5 @@ function add($id) {
         label: document.getElementById(`label-${$id}`).value
     }
     fields[$id] = field;
-    renderView
+    renderView();
 }
