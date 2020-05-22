@@ -58,17 +58,17 @@ const genForm = $row => {
     const genField = $row => {
         if($row.type == 'textarea')
             return `
-                <textarea class="border" name="${$row.name}" placeholder="${$row.placeholder}"></textarea>
+                <textarea class="border w-total" name="${$row.name}" placeholder="${$row.placeholder}"></textarea>
             `;
         else if($row.type == 'select')
             return `
-                <select class="border" name="${$row.name}">
+                <select class="border  w-total" name="${$row.name}">
                     <option ${$row.value == '' ? 'selected' : ''} disabled value=''> ${$row.placeholder} </option>
                     ${genOptions($row.name, $row.value)}
                 </select>
             `;
         return `
-            <input class="border-b" type="${$row.type}" name="${$row.name}" placeholder="${$row.placeholder}">
+            <input class="border-b w-total" type="${$row.type}" name="${$row.name}" placeholder="${$row.placeholder}">
         `;
     } 
     return `
