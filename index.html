@@ -22,6 +22,7 @@
                 <th> Campo </th>
                 <th> Tipo </th>
                 <th> Placeholder </th>
+                <th> Operação </th>
             </tr>
         </thead>
         <tbody id="corpo"></tbody>
@@ -31,95 +32,7 @@
         <legend>Pre-visualização</legend>
     </fieldset>
 
+    <script src="./script.js"></script>
 
-    <script>
-        // Pegar o campo select Forms
-        var forms = document.getElementById('forms');
-        
-        // Controlar o campo sempre que houver alteração executar a tarefa
-        forms.addEventListener('change', tarefa);
-
-        // A para os campos do form
-        var fields = [
-            {
-                form: 'signin',
-                field: 'Username',
-                type: 'text',
-                placeholder: 'Nome de utilizado'
-            },
-            {
-                form: 'signin',
-                field: 'Password',
-                type: 'password',
-                placeholder: 'Palavra-passe'
-            },
-            {
-                form: 'signup',
-                field: 'fullname',
-                type: 'text',
-                placeholder: 'Nome Completo'
-            },
-            {
-                form: 'signup',
-                field: 'Username',
-                type: 'text',
-                placeholder: 'Nome de utilizado'
-            },
-            {
-                form: 'signup',
-                field: 'Password',
-                type: 'password',
-                placeholder: 'Palavra-passe'
-            }
-        ];
-
-
-        // Pegar o corpo da tabela
-        var tbody = document.getElementById('corpo');
-
-        // Pegar o corpo do formulário
-        var form = document.getElementById('container');
-        
-        // A tarefa a ser executada
-        function tarefa(){
-            var tr;     
-            
-            tbody.innerHTML = "";
-            
-            ///Criar formulário
-            form.innerHTML = `
-                <legend>Pre-visualização</legend>
-                <form name="${forms.value}">
-            ` ;
-            
-            // Percorrer o vetor fields
-            fields.forEach(row => {
-
-                // Pegarcorrer o objecto
-                if (row.form == forms.value){ 
-                    tr = `
-                        <td> <input class="dados" value="${row.form}"> </td>
-                        <td> <input class="dados" value="${row.field}"> </td>
-                        <td> <input class="dados" value="${row.type}"> </td>
-                        <td> <input class="dados" value="${row.placeholder}"> </td>
-                    `;
-                    tbody.innerHTML += `<tr> ${tr} </tr>`;
-
-
-                    // Adicionar campos ao Formulário
-                    form.innerHTML += `
-                        <br /><label> ${row.placeholder} <br />
-                        <input type="${row.type}" name="${row.field}" placeholder="${row.placeholder}">
-                        </label>
-                    `;
-                }
-
-            });
-            // Terminar Formulário
-            form.innerHTML += "</form>"
-
-        }
-
-    </script>
 </body>
 </html>
