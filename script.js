@@ -10,9 +10,27 @@ function renderView(){
     var tr;     
     let typies;
     
-    tbody.innerHTML = "";
+
     form.innerHTML = `
         <form name="${forms.value}">
+    `;
+
+    tbody.innerHTML = `
+        <td> <input disabled id="form-${fields.length}" value="${forms.value}" /></td>
+        <td> 
+            <input id="name-${fields.length}" class="border" value=""> 
+        </td>
+        <td> 
+            <select id="type-${fields.length}" class="border">
+                <option disabled selected value=""> Selecione o tipo </option>
+                ${types.forEach(f => typies += `<option value="${f}">${f}</option>`)}
+                ${typies}
+            </select>
+        </td>
+        <td> <input id="placeholder-${fields.length}" class="border" value=""> </td>
+        <td> <input id="label-${fields.length}" class="border" value=""> </td>
+        <td> <button onclick="add(${fields.length})" class="w-total"> Add </button> </td>
+    
     `;
 
     fields.forEach(row => {
@@ -20,17 +38,17 @@ function renderView(){
         if (row.form == forms.value){ 
             tr = `
                 <td> ${row.form} </td>
-                <td> <input petr-form-field id="name-${row.id}" class="border-b iTable" id="" value="${row.name}"> </td>
+                <td> <input petr-form-field id="name-${row.id}" class="border" value="${row.name}"> </td>
                 <td> 
-                    <select petr-form-field id="type-${row.id}" class="border iTable">
+                    <select petr-form-field id="type-${row.id}" class="border">
                         <option disabled value=""> Selecione o tipo </option>
                         ${types.forEach(f => typies += `<option ${f === row.type ? 'selected':''} value="${f}">${f}</option>`)}
                         ${typies}
                     </select>
                 </td>
-                <td> <input petr-form-field id="placeholder-${row.id}" class="border-b iTable" value="${row.placeholder}"> </td>
-                <td> <input petr-form-field id="label-${row.id}" class="border-b iTable" value="${row.label}"> </td>
-                <td> <button onclick="renderView()"> Refresh </button> </td>
+                <td> <input petr-form-field id="placeholder-${row.id}" class="border" value="${row.placeholder}"> </td>
+                <td> <input petr-form-field id="label-${row.id}" class="border" value="${row.label}"> </td>
+                <td> <button onclick="rem(${row.id})" class="w-total"> Delete </button> </td>
             `;
 
             tbody.innerHTML += `<tr> ${tr} </tr>`;
@@ -61,4 +79,22 @@ function getInputs() {
             refresh(event.target.id, event.target.value)
         });
     });
+}
+
+function rem($id) {
+    delete fields[$id];
+    renderView();
+}
+
+function add($id) {
+    let field = {
+        id: $id,
+        form: document.getElementById(`form-${$id}`).value,
+        name: document.getElementById(`name-${$id}`).value,
+        type: document.getElementById(`type-${$id}`).value,
+        placeholder: document.getElementById(`placeholder-${$id}`).value,
+        label: document.getElementById(`label-${$id}`).value
+    }
+    fields[$id] = field;
+    renderView
 }

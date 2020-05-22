@@ -76,8 +76,12 @@ table {
     border-collapse: collapse;
 }
 
-th, td {
-    padding: .5rem 1rem;
+th {
+    padding: .7rem 1rem;
+}
+
+td {
+    padding: .2rem 1rem;
 }
 
 fieldset {

@@ -1,5 +1,6 @@
 var types = [
     'text',
+    'email',
     'number',
     'password',
     'radio',
