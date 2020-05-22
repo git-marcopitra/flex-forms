@@ -1,14 +1,32 @@
-var types = [
-    'text',
-    'email',
-    'number',
-    'password',
-    'radio',
-    'checkbox',
-    'select',
-    'option',
-    'textarea'
-];
+var options = {
+    gender: [
+        { value: 'M', description: 'Masculino' },
+        { value: 'F', description: 'Feminino' }
+    ],
+    types: [ 
+        { value: 'text' },
+        { value: 'email' },
+        { value: 'number' },
+        { value: 'password' },
+        { value: 'radio' },
+        { value: 'checkbox' },
+        { value: 'color' },
+        { value: 'date' },
+        { value: 'datetime-local' },
+        { value: 'file' },
+        { value: 'image' },
+        { value: 'month' },
+        { value: 'range' },
+        { value: 'search' },
+        { value: 'time' },
+        { value: 'url' },
+        { value: 'week' },
+        { value: 'tel' },
+        { value: 'select' },
+        { value: 'option' },
+        { value: 'textarea' }
+    ]
+}
 
 var formy =  [
     {
@@ -30,7 +48,9 @@ var fields = [
         name: 'username',
         type: 'text',
         placeholder: 'Insira o nome de utilizador',
-        label: 'Nome de utilizador'
+        label: 'Nome de utilizador',
+        options: [],
+        value:''
     },
     {
         id: 1,
@@ -38,7 +58,9 @@ var fields = [
         name: 'password',
         type: 'password',
         placeholder: 'Insira a palavra-passe',
-        label: 'Palavra-passe'
+        label: 'Palavra-passe',
+        options: [],
+        value:''
     },
     {
         id: 2,
@@ -46,7 +68,9 @@ var fields = [
         name: 'fullname',
         type: 'text',
         placeholder: 'Insira o seu nome completo',
-        label: 'Nome Completo'
+        label: 'Nome Completo',
+        options: [],
+        value:''
     },
     {
         id: 3,
@@ -54,14 +78,37 @@ var fields = [
         name: 'username',
         type: 'text',
         placeholder: 'Insira um nome de utilizado válido',
-        label: 'Nome de utilizador'
+        label: 'Nome de utilizador',
+        options: [],
+        value:''
     },
     {
         id: 4,
         form: 'signup',
+        name: 'gender',
+        type: 'select',
+        placeholder: 'Insira um nome de utilizado válido',
+        label: 'Nome de utilizador',
+        options: [
+            {
+                value: 'M',
+                description: 'Masculino'
+            },
+            {
+                value: 'F',
+                description: 'Feminino'
+            }
+        ],
+        value:''
+    },
+    {
+        id: 5,
+        form: 'signup',
         name: 'password',
         type: 'password',
         placeholder: 'Crie uma palavra-passe válida',
-        label: 'Palavra-passe'
+        label: 'Palavra-passe',
+        options: [],
+        value:''
     }
 ];

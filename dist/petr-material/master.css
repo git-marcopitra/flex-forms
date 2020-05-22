@@ -48,7 +48,8 @@ p {
     margin: 1px 0;
 }
 
-input, select, option {
+input, select {
+    display: block;
     background-color: inherit;
     padding: .5rem;
     outline: none;
@@ -86,13 +87,18 @@ td {
 
 fieldset {
     display: inline-flex;
-    padding: 2rem;
     margin: 1rem;
     border: none;
+    padding: 2rem;
 }
 
 legend {
     text-align: center;
+}
+
+form {
+    display: block;
+    padding-left: 2rem;
 }
 
 /* Width Configuration*/ 
@@ -204,7 +210,10 @@ legend {
 
 
 
-
+/* PETR Elements */
+*[petr-table-form]:first-child {
+    opacity: 0;
+}
 
 /* SPECIFIC ITEMS */
 
