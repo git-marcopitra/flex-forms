@@ -1,8 +1,8 @@
 console.log("Script Works");
 
 var forms = document.getElementById('forms');
-var tbody = document.getElementById('corpo');
 var form = document.getElementById('container');
+var tbody = document.querySelector('table[petr-table-form]');
 
 forms.addEventListener('change', renderView);
 
@@ -12,7 +12,6 @@ function renderView(){
     
     tbody.innerHTML = "";
     form.innerHTML = `
-        <legend>Pre-visualização</legend>
         <form name="${forms.value}">
     `;
 
@@ -21,22 +20,23 @@ function renderView(){
         if (row.form == forms.value){ 
             tr = `
                 <td> ${row.form} </td>
-                <td> <input id="name-${row.id}" class="iTable" id="" value="${row.name}"> </td>
+                <td> <input petr-form-field id="name-${row.id}" class="iTable" id="" value="${row.name}"> </td>
                 <td> 
-                    <select id="type-${row.id}" class="iTable">
+                    <select petr-form-field id="type-${row.id}" class="iTable">
                         <option disabled value=""> Selecione o tipo </option>
                         ${types.forEach(f => typies += `<option ${f === row.type ? 'selected':''} value="${f}">${f}</option>`)}
                         ${typies}
                     </select>
                 </td>
-                <td> <input id="placeholder-${row.id}" class="iTable" value="${row.placeholder}"> </td>
-                <td> <button onclick="tarefa()"> Refresh </button> </td>
+                <td> <input petr-form-field id="placeholder-${row.id}" class="iTable" value="${row.placeholder}"> </td>
+                <td> <input petr-form-field id="label-${row.id}" class="iTable" value="${row.label}"> </td>
+                <td> <button onclick="renderView()"> Refresh </button> </td>
             `;
 
             tbody.innerHTML += `<tr> ${tr} </tr>`;
 
             form.innerHTML += `
-                <br /><label> ${row.placeholder} <br />
+                <br /><label> ${row.label} <br />
                 <input type="${row.type}" name="${row.name}" placeholder="${row.placeholder}">
                 </label>
             `;
@@ -54,7 +54,7 @@ function refresh($id, $value) {
 }
 
 function getInputs() {
-    let tbInputs = document.querySelectorAll('.iTable');
+    let tbInputs = document.querySelectorAll('*[petr-form-field]');
 
     tbInputs.forEach(el => {
         el.addEventListener('change', event => {

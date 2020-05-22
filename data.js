@@ -6,7 +6,7 @@ var types = [
     'checkbox',
     'select',
     'option',
-    'text'
+    'textarea'
 ];
 
 var formy =  [
@@ -28,34 +28,39 @@ var fields = [
         form: 'signin',
         name: 'username',
         type: 'text',
-        placeholder: 'Nome de utilizado'
+        placeholder: 'Insira o nome de utilizador',
+        label: 'Nome de utilizador'
     },
     {
         id: 1,
         form: 'signin',
         name: 'password',
         type: 'password',
-        placeholder: 'Palavra-passe'
+        placeholder: 'Insira a palavra-passe',
+        label: 'Palavra-passe'
     },
     {
         id: 2,
         form: 'signup',
         name: 'fullname',
         type: 'text',
-        placeholder: 'Nome Completo'
+        placeholder: 'Insira o seu nome completo',
+        label: 'Nome Completo'
     },
     {
         id: 3,
         form: 'signup',
         name: 'username',
         type: 'text',
-        placeholder: 'Nome de utilizado'
+        placeholder: 'Insira um nome de utilizado válido',
+        label: 'Nome de utilizador'
     },
     {
         id: 4,
         form: 'signup',
         name: 'password',
         type: 'password',
-        placeholder: 'Palavra-passe'
+        placeholder: 'Crie uma palavra-passe válida',
+        label: 'Palavra-passe'
     }
 ];
