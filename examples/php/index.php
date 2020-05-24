@@ -16,7 +16,7 @@
         <option value="signup"> Formulário de registro </option>
     </select>
 
-    <button onclick="getdata()"> Refresh </button>
+    <button onclick="getData()"> Refresh </button>
     <button onclick="sendData()"> Save </button>
 
     <!-- Tabelas a ser aprensentadas -->
@@ -41,7 +41,8 @@
 
     <fieldset petr-prev-form>
     </fieldset>
-    <script src="./script.js"></script>
+    
+    <script src="script.js"></script>
     <script src="./petr-flex-form.js"></script>
     <!-- In GeneratorJS you will custom your html source, but becarefull -->
     <script src="./generators.js"></script>

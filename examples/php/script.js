@@ -1,4 +1,4 @@
-window.onload = function () {
+function getData(){
     xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
 
     xmlhttp.onreadystatechange = () => {
@@ -9,6 +9,7 @@ window.onload = function () {
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
+
 function sendData() {
     xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
     

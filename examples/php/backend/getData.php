@@ -1,9 +1,7 @@
 <?php
-    echo `
-    {
-        "firstName": "Marco",
-        "lastName": "Pitra" 
-    }
-    `;
+    echo "{
+        'firstName': 'Marco',
+        'lastName': 'Pitra' 
+    }";
 
 ?>
