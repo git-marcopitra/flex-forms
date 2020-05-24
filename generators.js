@@ -64,7 +64,7 @@ const genForm = $row => {
             return `
                 <select class="border  w-total" name="${$row.name}">
                     <option ${$row.value == '' ? 'selected' : ''} disabled value=''> ${$row.placeholder} </option>
-                    ${genOptions($row.name, $row.value)}
+                    ${genOptions($row.option, $row.value)}
                 </select>
             `;
         return `

@@ -20,7 +20,7 @@ var options = [
     { id: 18,   option: 'type',     value: 'week',          description: '' },
     { id: 19,   option: 'type',     value: 'tel',           description: '' },
     { id: 20,   option: 'type',     value: 'select',        description: '' },
-    { id: 21,   option: 'type',     value: 'option' ,       description: ''},
+    { id: 21,   option: 'type',     value: 'option' ,       description: '' },
     { id: 22,   option: 'type',     value: 'textarea',      description: '' }
 ];
 
@@ -73,7 +73,7 @@ var fields = [
         type: 'select',
         placeholder: 'Insira um nome de utilizado válido',
         label: 'Nome de utilizador',
-        option: 'genfer',
+        option: 'gender',
         value:''
     },
     {
