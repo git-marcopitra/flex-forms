@@ -16,8 +16,8 @@
         <option value="signup"> Formulário de registro </option>
     </select>
 
-    <button onclick="renderView()"> Refresh </button>
-    <button onclick="createAmenities()"> Save </button>
+    <button onclick="getdata()"> Refresh </button>
+    <button onclick="sendData()"> Save </button>
 
     <!-- Tabelas a ser aprensentadas -->
 

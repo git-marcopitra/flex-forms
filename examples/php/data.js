@@ -1,44 +1,32 @@
-var options = {
-    gender: [
-        { value: 'M', description: 'Masculino' },
-        { value: 'F', description: 'Feminino' }
-    ],
-    types: [ 
-        { value: 'text' },
-        { value: 'email' },
-        { value: 'number' },
-        { value: 'password' },
-        { value: 'radio' },
-        { value: 'checkbox' },
-        { value: 'color' },
-        { value: 'date' },
-        { value: 'datetime-local' },
-        { value: 'file' },
-        { value: 'image' },
-        { value: 'month' },
-        { value: 'range' },
-        { value: 'search' },
-        { value: 'time' },
-        { value: 'url' },
-        { value: 'week' },
-        { value: 'tel' },
-        { value: 'select' },
-        { value: 'option' },
-        { value: 'textarea' }
-    ]
-}
+var options = [
+    { id: 0,    option: 'gender',   value: 'M',             description: 'Masculino' },
+    { id: 1,    option: 'gender',   value: 'F',             description: 'Feminino' },
+    { id: 2,    option: 'type',     value: 'text',          description: '' },
+    { id: 3,    option: 'type',     value: 'email',         description: '' },
+    { id: 4,    option: 'type',     value: 'number',        description: '' },
+    { id: 5,    option: 'type',     value: 'password',      description: '' },
+    { id: 6,    option: 'type',     value: 'radio',         description: '' },
+    { id: 7,    option: 'type',     value: 'checkbox',      description: '' },
+    { id: 8,    option: 'type',     value: 'color',         description: '' },
+    { id: 9,    option: 'type',     value: 'date',          description: '' },
+    { id: 10,   option: 'type',     value: 'datetime-local',description: '' },
+    { id: 11,   option: 'type',     value: 'file',          description: '' },
+    { id: 12,   option: 'type',     value: 'image',         description: '' },
+    { id: 13,   option: 'type',     value: 'month',         description: '' },
+    { id: 14,   option: 'type',     value: 'range',         description: '' },
+    { id: 15,   option: 'type',     value: 'search',        description: '' },
+    { id: 16,   option: 'type',     value: 'time',          description: '' },
+    { id: 17,   option: 'type',     value: 'url',           description: '' },
+    { id: 18,   option: 'type',     value: 'week',          description: '' },
+    { id: 19,   option: 'type',     value: 'tel',           description: '' },
+    { id: 20,   option: 'type',     value: 'select',        description: '' },
+    { id: 21,   option: 'type',     value: 'option' ,       description: ''},
+    { id: 22,   option: 'type',     value: 'textarea',      description: '' }
+];
 
 var formy =  [
-    {
-        idForm: 1,
-        formCode: "signin",
-        formName: "Sign In"
-    },
-    {
-        idForm: 2,
-        formCode: "signup",
-        formName: "Sign Up"
-    }
+    {   id: 1,  formCode: "signin", formName: "Sign In" },
+    {   id: 2,  formCode: "signup", formName: "Sign Up" }
 ];
 
 var fields = [
@@ -49,7 +37,6 @@ var fields = [
         type: 'text',
         placeholder: 'Insira o nome de utilizador',
         label: 'Nome de utilizador',
-        options: [],
         value:''
     },
     {
@@ -59,7 +46,6 @@ var fields = [
         type: 'password',
         placeholder: 'Insira a palavra-passe',
         label: 'Palavra-passe',
-        options: [],
         value:''
     },
     {
@@ -69,7 +55,6 @@ var fields = [
         type: 'text',
         placeholder: 'Insira o seu nome completo',
         label: 'Nome Completo',
-        options: [],
         value:''
     },
     {
@@ -79,7 +64,6 @@ var fields = [
         type: 'text',
         placeholder: 'Insira um nome de utilizado válido',
         label: 'Nome de utilizador',
-        options: [],
         value:''
     },
     {
@@ -89,16 +73,7 @@ var fields = [
         type: 'select',
         placeholder: 'Insira um nome de utilizado válido',
         label: 'Nome de utilizador',
-        options: [
-            {
-                value: 'M',
-                description: 'Masculino'
-            },
-            {
-                value: 'F',
-                description: 'Feminino'
-            }
-        ],
+        option: 'genfer',
         value:''
     },
     {
@@ -108,7 +83,6 @@ var fields = [
         type: 'password',
         placeholder: 'Crie uma palavra-passe válida',
         label: 'Palavra-passe',
-        options: [],
         value:''
     }
 ];
