@@ -21,8 +21,6 @@ function renderView() {
     getInputs();
 }
 
-
-
 function getInputs() {
     // Function to control inputs in realtime
 
@@ -66,7 +64,11 @@ function update($id, $value) {
 
 const genOptions = ($name, $value) => {
     //Generator the options to select 
-    const $data = options[$name];
+    let $data = [];
+    options.forEach(data => {
+        if(data.option == $name)
+            $data[$data.length] = data;
+    });
     let optionGen;
     $data.forEach(data => {
         optionGen += optGen(data, $value);

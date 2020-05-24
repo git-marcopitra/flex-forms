@@ -8,7 +8,7 @@ const optGen = ($data, $value) =>
     (`<option 
         ${$data.value === $value ? 'selected' : '' } 
         value="${$data.value}">
-            ${$data.description > 0 ? $data.description : $data.value }
+            ${$data.description != '' ? $data.description : $data.value }
     </option>`);
  
 const genRows = $row =>  {
@@ -20,7 +20,7 @@ const genRows = $row =>  {
             <td> 
                 <select petr-form-field id="type-${$row.id}" class="border">
                     <option disabled value=""> Selecione o tipo </option>
-                    ${genOptions('types', $row.type)}
+                    ${genOptions('type', $row.type)}
                 </select>
             </td>
             <td> <input petr-form-field id="placeholder-${$row.id}" class="border" value="${$row.placeholder}"> </td>
@@ -41,7 +41,7 @@ const genAddRow = () => {
         <td> 
             <select id="type-${fields.length}" class="border">
                 <option disabled selected value=""> Selecione o tipo </option>
-                ${genOptions('types', '')}
+                ${genOptions('type', '')}
             </select>
         </td>
         <td> <input id="placeholder-${fields.length}" class="border" value=""> </td>
