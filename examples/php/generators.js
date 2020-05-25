@@ -10,6 +10,11 @@ const optGen = ($data, $value) =>
         value="${$data.value}">
             ${$data.description != '' ? $data.description : $data.value }
     </option>`);
+
+const optFormsGen = ($data) => 
+    (`<option value="${$data.formcode}">
+            ${$data.formname }
+    </option>`);
  
 const genRows = $row =>  {
     //Generator the rows data of table

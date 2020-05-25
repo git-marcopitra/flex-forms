@@ -9,6 +9,25 @@
     <script src="./data.js"></script>
 </head>
 <body>
+
+    <div class="modal-wrapper">
+        <div class="modal">
+            <h2>Modal</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th> Select </th>
+                        <th> Valor </th>
+                        <th> Descrição </th>
+                        <th> Operações</th>
+                    </tr>
+                </thead>
+                <tbody petr-table-options>
+                    <!-- I can consul fragments of table in generators.js -->
+                </tbody>
+            </table>
+        </div>
+    </div>
     <!-- Responsável por decidir qual form será utilizado -->
     <select petr-form-selector id="forms" class="border">
         <option value="" selected disabled>Selecione o teu formulário</option>
@@ -36,6 +55,7 @@
             <!-- I can consul fragments of table in generators.js -->
         </tbody>
     </table>
+
 
     <fieldset petr-prev-form>
     </fieldset>
