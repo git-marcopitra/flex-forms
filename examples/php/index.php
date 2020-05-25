@@ -12,8 +12,6 @@
     <!-- Responsável por decidir qual form será utilizado -->
     <select petr-form-selector id="forms" class="border">
         <option value="" selected disabled>Selecione o teu formulário</option>
-        <option value="signin"> Formulário de Login </option>
-        <option value="signup"> Formulário de registro </option>
     </select>
 
     <button onclick="getData()"> Refresh </button>

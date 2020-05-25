@@ -4,7 +4,9 @@ var forms = document.querySelector('*[petr-form-selector]');
 var form = document.querySelector('*[petr-prev-form]');
 var tbody = document.querySelector('*[petr-table-form]');
 
-forms.innerHTML += genOptions()
+window.onload = () => {
+    forms.innerHTML += genFormsOpt();
+}
 
 forms.addEventListener('change', renderView);
 
@@ -78,14 +80,9 @@ const genOptions = ($name, $value) => {
     return optionGen;
 }
 
-
-const genFormsOpt = ($name) => {
-    let $data = [];
-    formy.forEach(data => {
-        $data[$data.length] = data;
-    });
+const genFormsOpt = () => {
     let optionGen;
-    $data.forEach(data => {
+    formy.forEach(data => {
         optionGen += optFormsGen(data);
     });
     return optionGen;

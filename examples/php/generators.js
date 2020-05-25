@@ -12,8 +12,8 @@ const optGen = ($data, $value) =>
     </option>`);
 
 const optFormsGen = ($data) => 
-    (`<option value="${$data.formcode}">
-            ${$data.formname }
+    (`<option value="${$data.formCode}">
+            ${$data.formName}
     </option>`);
  
 const genRows = $row =>  {
